@@ -1,14 +1,17 @@
 $(document).ready(function(){	
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC2P3JURJEZcaG1PzDlOnYilV2KsQBHsvA",
-    authDomain: "timesheet-c070b.firebaseapp.com",
-    databaseURL: "https://timesheet-c070b.firebaseio.com",
-    projectId: "timesheet-c070b",
-    storageBucket: "",
-    messagingSenderId: "763391736641"
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCFx6EEPuadPlNmiWDpXJZmo5jifmakrhk",
+    authDomain: "nbc-changemanagement.firebaseapp.com",
+    databaseURL: "https://nbc-changemanagement.firebaseio.com",
+    projectId: "nbc-changemanagement",
+    storageBucket: "nbc-changemanagement.appspot.com",
+    messagingSenderId: "230090365679",
+    appId: "1:230090365679:web:36c2f650f6b3ab561ed91a",
+    measurementId: "G-7P5XXLMPFF"
   };
-  firebase.initializeApp(config);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
   database = firebase.database();
   
