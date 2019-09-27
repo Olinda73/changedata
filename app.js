@@ -18,7 +18,7 @@ $(document).ready(function(){
   $('#submit-employee').on('click',function(){
   	event.preventDefault();
   	name = $('#employee-name').val().trim();
-  	role = $('#employee-role').val().trim();
+  	changerequested = $('#change-requested').val().trim();
   	startdate = $('#employee-startdate').val().trim();
   	monthlyrate = $('#employee-monthlyrate').val().trim();
 
