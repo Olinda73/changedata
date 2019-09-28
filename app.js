@@ -24,14 +24,14 @@ $(document).ready(function(){
 
   	database.ref().push({
   		name : name,
-  		role : role,
+  		changerequested : changerequested,
   		startdate : startdate,
   		monthlyrate : monthlyrate,
   		dateAdded: firebase.database.ServerValue.TIMESTAMP
   	});
 
   	$('#inputname').val('');
-  	$('#employee-role').val('');
+  	$('#change-requested').val('');
   	$('#employee-startdate').val('');
   	$('#employee-monthlyrate').val('');
 
@@ -65,7 +65,7 @@ console.log(today)
 	billedCol = $('<div class="col-xs-2">'+billed+'</div>')
 
 	newRow.append(nameCol);
-	newRow.append(roleCol);
+	newRow.append(changerequestedCol);
 	newRow.append(dateCol);
 	newRow.append(monthsWorkedCol);
 	newRow.append(rateCol);
