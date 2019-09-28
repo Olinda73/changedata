@@ -17,7 +17,7 @@ $(document).ready(function(){
   
   $('#submit-employee').on('click',function(){
   	event.preventDefault();
-  	name = $('#employee-name').val().trim();
+  	name = $('#inputname').val().trim();
   	changerequested = $('#change-requested').val().trim();
   	startdate = $('#employee-startdate').val().trim();
   	monthlyrate = $('#employee-monthlyrate').val().trim();
@@ -30,7 +30,7 @@ $(document).ready(function(){
   		dateAdded: firebase.database.ServerValue.TIMESTAMP
   	});
 
-  	$('#employee-name').val('');
+  	$('#inputname').val('');
   	$('#employee-role').val('');
   	$('#employee-startdate').val('');
   	$('#employee-monthlyrate').val('');
