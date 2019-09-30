@@ -82,6 +82,8 @@ $(document).ready(function () {
 		dateCol = $('<div class="col-xs-2">' + snapVal.startdate + '</div>');
 		enddateCol = $('<div class="col-xs-2">' + snapVal.enddate + '</div>');
 
+		convertedDate = moment(snapVal.startdate, "MM/DD/YYY");
+		convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
 	
 		newRow.append(nameCol);
 		newRow.append(changerequestedCol);
