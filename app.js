@@ -18,22 +18,46 @@ $(document).ready(function(){
     $('#submit-employee').on('click',function(){
         event.preventDefault();
         name = $('#inputname').val().trim();
-        changerequested = $('#change-requested').val().trim();
+		changerequested = $('#change-requested').val().trim();
+		changetype = $('#change-type').val().trim();
+        status = $('#status').val().trim();
+        priority = $('#priority').val().trim();
+        impact = $('#impact').val().trim();
+        risk = $('#risk').val().trim();
+        group = $('#group').val().trim();
+        agent = $('#agent').val().trim();
+        description = $('#description').val().trim();
+
       startdate = $('#employee-startdate').val().trim();
       enddate = $('#employee-enddate').val().trim();  
         monthlyrate = $('#employee-monthlyrate').val().trim();
   
         database.ref().push({
             name : name,
-            changerequested : changerequested,
-          startdate : startdate,
-          enddate : enddate,
+			changerequested : changerequested,
+			changetype: changetype,
+            status: status,
+            priority: priority,
+            impact: impact,
+            group: group,
+            agent: agent,
+            description: description,
+			startdate : startdate,
+         	enddate : enddate,
             monthlyrate : monthlyrate,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
   
-        $('#inputname').val('');
-        $('#change-requested').val('');
+     $('#inputname').val('');
+		$('#change-requested').val('');
+		$('#change-type').val('');
+        $('#status').val('');
+        $('#priority').val('');
+        $('#impact').val('');
+        $('#group').val('');
+        $('#agent').val('');
+        $('#description').val('');
+
       $('#employee-startdate').val('');
       $('#employee-enddate').val('');
         $('#employee-monthlyrate').val('');
@@ -50,9 +74,17 @@ $(document).ready(function(){
         snapVal = snapshot.val();
         newRow = $('<div>').addClass('employee row');
         nameCol = $('<div class="col-xs-2">'+snapVal.name+'</div>');
-         changerequestedCol = $('<div class="col-xs-2">'+snapVal.changerequested+'</div>');
-        dateCol = $('<div class="col-xs-2">'+snapVal.startdate+'</div>');
-        enddateCol = $('<div class="col-xs-2">'+snapVal.enddate+'</div>');
+        changerequestedCol = $('<div class="col-xs-2">' + snapVal.changerequested + '</div>');
+        changetypeCol = $('<div class="col-xs-2">' + snapVal.changetype + '</div>');
+        statusCol = $('<div class="col-xs-2">' + snapVal.status + '</div>');
+        priorityCol = $('<div class="col-xs-2">' + snapVal.priority + '</div>');
+        impactCol = $('<div class="col-xs-2">' + snapVal.impact + '</div>');
+        groupCol = $('<div class="col-xs-2">' + snapVal.group + '</div>');
+        agentCol = $('<div class="col-xs-2">' + snapVal.agent + '</div>');
+        descriptionCol = $('<div class="col-xs-2">' + snapVal.description + '</div>');
+        dateCol = $('<div class="col-xs-2">' + snapVal.startdate + '</div>');
+        enddateCol = $('<div class="col-xs-2">' + snapVal.enddate + '</div>');
+
       
       convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
       convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
@@ -68,14 +100,18 @@ $(document).ready(function(){
       
       billedCol = $('<div class="col-xs-2">'+billed+'</div>')
   
-      newRow.append(nameCol);
-      newRow.append(changerequestedCol);
-      newRow.append(dateCol);
-      newRow.append(enddateCol);
-      newRow.append(monthsWorkedCol);
-      newRow.append(rateCol);
-      newRow.append(billedCol);
-  
+	  newRow.append(nameCol);
+	  newRow.append(changerequestedCol);
+	  newRow.append(changetype);
+	  newRow.append(status);
+	  newRow.append(priority);
+	  newRow.append(impact);
+	  newRow.append(group);
+	  newRow.append(agent);
+	  newRow.append(description);
+	  newRow.append(dateCol);
+	  newRow.append(enddateCol);
+
   
         $('#employee-container').append(newRow);
     });
