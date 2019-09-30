@@ -47,7 +47,7 @@ console.log(today)
   	snapVal = snapshot.val();
   	newRow = $('<div>').addClass('employee row');
   	nameCol = $('<div class="col-xs-2">'+snapVal.name+'</div>');
-   	roleCol = $('<div class="col-xs-2">'+snapVal.changerequested+'</div>');
+   	changerequestedCol = $('<div class="col-xs-2">'+snapVal.changerequested+'</div>');
   	dateCol = $('<div class="col-xs-2">'+snapVal.startdate+'</div>');
     
     convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
