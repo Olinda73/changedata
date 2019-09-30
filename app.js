@@ -86,13 +86,13 @@ $(document).ready(function(){
         enddateCol = $('<div class="col-xs-2">' + snapVal.enddate + '</div>');
 
       
-      convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
-      convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
-      monthsDuration = moment(convertedDate).diff(moment(), "months");
+    //   convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
+    //   convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
+    //   monthsDuration = moment(convertedDate).diff(moment(), "months");
   
-      monthsDuration *= -1
+    //   monthsDuration *= -1
   
-      monthsWorkedCol = $('<div class="col-xs-2">'+monthsDuration+'</div>');
+    //   monthsWorkedCol = $('<div class="col-xs-2">'+monthsDuration+'</div>');
         
     //     rateCol = $('<div class="col-xs-2">'+snapVal.monthlyrate+'</div>');
         
