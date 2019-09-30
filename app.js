@@ -82,8 +82,19 @@ $(document).ready(function () {
 		dateCol = $('<div class="col-xs-2">' + snapVal.startdate + '</div>');
 		enddateCol = $('<div class="col-xs-2">' + snapVal.enddate + '</div>');
 
-		convertedDate = moment(snapVal.startdate, "MM/DD/YYY");
-		convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
+		convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
+
+		monthsDuration = moment(convertedDate).diff(moment(), "months");
+	
+		monthsDuration *= -1
+	
+		monthsWorkedCol = $('<div class="col-xs-2">'+monthsDuration+'</div>');
+		  
+		  rateCol = $('<div class="col-xs-2">'+snapVal.monthlyrate+'</div>');
+		  
+		  var billed = parseInt(snapVal.monthlyrate * monthsDuration);
+		
+		billedCol = $('<div class="col-xs-2">'+billed+'</div>')
 	
 		newRow.append(nameCol);
 		newRow.append(changerequestedCol);
