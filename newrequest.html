@@ -94,7 +94,7 @@
     <!---Jumbotron for Title--->
 
     <div class="jumbotron" style="background-color: #343a40; color: white;">
-      <h1 class="text-center"><strong>Change Request</strong></h1>
+      <h1 class="text-center"><strong>Change Request Form</strong></h1>
     </div>
 
     <!-- This row will handle all of the retrieved articles -->
@@ -106,41 +106,95 @@
         <div class="panel panel-primary">
 
           <!-- Panel Heading for the retrieved articles box -->
-          <div class="panel-heading"style="background-color: #343a40; color: white;">
-            <h3 class="panel-title"><strong><i class="fa fa-table"></i> Changes Requested</strong></h3>
-          </div>
-
+         
           
-          <!-- This main panel will hold each of the resulting articles -->
-          <div class="panel-body" id="well-section">
-            <div class="row header-row">
-              <div class="col-xs-1 employee-header">Search a requester</div>
-              <div class="col-xs-1 employee-header">Change Requested</div>
-              <div class="col-xs-1 employee-header">Change Type</div>
-              <div class="col-xs-1 employee-header">Status</div>
-              <div class="col-xs-1 employee-header">Priority</div>
-              <div class="col-xs-1 employee-header">Impact</div>
-              <div class="col-xs-1 employee-header">Risk</div>
-              <div class="col-xs-1 employee-header">Group</div>
-              <div class="col-xs-1 employee-header">Agent</div>
-              <div class="col-xs-1 employee-header">Description</div>
-              <div class="col-xs-1 employee-header">Start Date</div>
-              <div class="col-xs-1 employee-header">End Date</div>
-
-            </div>
-          </div>
-
-          <div class="panel-body" id="employee-container">
-
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Adding new employees -->
     <div class="row">
-      <div class="col-sm-12">
-       
+      <div class="container">
+        <br>
+        <!-- Employee Entry Form -->
+        <div class="panel panel-primary">
+          <div class="panel-heading" style="background-color: #343a40; color: white;">
+            <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i> Add Change</strong></h3>
+          </div>
+          <div class="panel-body">
+
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+
+              <!-- Here we create the text box for capturing the search term-->
+              <div class="form-group">
+                <label for="inputname">Employee Name</label>
+                <select id="inputname" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Olinda Cadena</option>
+                  <option>John Sprehe</option>
+                  <option>Joe Rushing</option>
+                  <option>Jeremy Mortley</option>
+                  <option>Jeremy Fleming</option>
+                  <option>Robert Miles</option>
+                  <option>Dave Daniels</option>
+                  <option>Greg Harlow</option>
+                  <option>Matt Varney</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="change-requested">Change Requested</label>
+                <input type="text" class="form-control" id="change-requested">
+              </div>
+              <div class="form-group">
+                <label for="change-type">Change Type</label>
+                <select id="change-type" class="form-control">
+                  <option selected>Minor</option>
+                  <option>Standard</option>
+                  <option>Major</option>
+                  <option>Emergency</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" class="form-control">
+              <option selected>Open</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="priority">Priority</label>
+                <select id="priority" class="form-control">
+                  <option selected>Low</option>
+                  <option>Medium</option>
+                  <option>High</option>
+                  <option>Urgent</option>
+                </select>
+                <div class="form-group">
+                  <label for="impact">Impact</label>
+                  <select id="impact" class="form-control">
+                    <option selected>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="employee-startdate">Start Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="date" class="form-control" id="employee-startdate">
+              </div>
+              <div class="form-group">
+                <label for="employee-enddate">End Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="date" class="form-control" id="employee-enddate">
+              </div>
+              <div class="form-group">
+                <label for="employee-description">Description</label>
+                <input type="text" class="form-control" id="employee-monthlyrate">
+              </div>
+
+
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-primary" style="background-color: #343a40; color: white;" id="submit-employee">Submit</button>
+
+            </form>
+          </div>
         </div>
       </div>
     </div>
