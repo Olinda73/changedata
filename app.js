@@ -19,20 +19,23 @@ $(document).ready(function(){
   	event.preventDefault();
   	name = $('#inputname').val().trim();
   	changerequested = $('#change-requested').val().trim();
-  	startdate = $('#employee-startdate').val().trim();
+	startdate = $('#employee-startdate').val().trim();
+	enddate = $('#employee-enddate').val().trim();  
   	monthlyrate = $('#employee-monthlyrate').val().trim();
 
   	database.ref().push({
   		name : name,
   		changerequested : changerequested,
-  		startdate : startdate,
+		startdate : startdate,
+		enddate : enddate,
   		monthlyrate : monthlyrate,
   		dateAdded: firebase.database.ServerValue.TIMESTAMP
   	});
 
   	$('#inputname').val('');
   	$('#change-requested').val('');
-  	$('#employee-startdate').val('');
+	$('#employee-startdate').val('');
+	$('#employee-enddate').val('');
   	$('#employee-monthlyrate').val('');
 
   });
@@ -48,10 +51,11 @@ console.log(today)
   	newRow = $('<div>').addClass('employee row');
   	nameCol = $('<div class="col-xs-2">'+snapVal.name+'</div>');
    	changerequestedCol = $('<div class="col-xs-2">'+snapVal.changerequested+'</div>');
-  	dateCol = $('<div class="col-xs-2">'+snapVal.startdate+'</div>');
+	  dateCol = $('<div class="col-xs-2">'+snapVal.startdate+'</div>');
+	  enddateCol = $('<div class="col-xs-2">'+snapVal.enddate+'</div>');
     
     convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
-
+	convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
     monthsDuration = moment(convertedDate).diff(moment(), "months");
 
     monthsDuration *= -1
@@ -67,6 +71,7 @@ console.log(today)
 	newRow.append(nameCol);
 	newRow.append(changerequestedCol);
 	newRow.append(dateCol);
+	newRow.append(enddateCol);
 	newRow.append(monthsWorkedCol);
 	newRow.append(rateCol);
 	newRow.append(billedCol);
