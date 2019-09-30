@@ -3,100 +3,38 @@
  
 <head>
   <meta charset="UTF-8">
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>NBC/Telemundo Change Management</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
- 
   <!-- Bootswatch Styling for Improving the Aesthetics -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
  
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
  
   <!-- Style to fix the issue of text extending past panel length -->
   <style>
     .panel-body a {
       word-break: break-all;
     }
- 
-    .employee-header {
+    .employee-header{
       font-weight: bold;
     }
- 
-    .header-row {
-      border-bottom: 10px solid #CCC;
+    .header-row{
+      border-bottom:  3px solid #CCC;
     }
   </style>
- 
- 
 </head>
  
 <body>
  
-  <!-- Navbar content -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">NBC/Telemundo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="newrequest.html"> Submit a Change</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Issue Tracker</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            See More
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="newrequest.html">Change Requests</a>
-            <a class="dropdown-item" href="#">Current Changes</a>
-            <a class="dropdown-item" href="#">Closed Changes</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
- 
- 
   <!-- Main Bootstrap Search -->
-  <div class="container col-sm-12">
+  <div class="container">
  
-  <!-- <ul class="nav flex-column col-sm-2"style="background-color: #343a40; color: white;">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Tickets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Problems</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Releases</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div> -->
- 
-  
- 
-    <!---Jumbotron for Title--->
- 
-    <div class="jumbotron" style="background-color: #343a40; color: white;">
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron" style="background-color: #20315A; color: white;">
       <h1 class="text-center"><strong>Change Requests</strong></h1>
     </div>
+ 
  
     <!-- This row will handle all of the retrieved articles -->
     <div class="row">
@@ -107,32 +45,23 @@
         <div class="panel panel-primary">
  
           <!-- Panel Heading for the retrieved articles box -->
-          <div class="panel-heading" style="background-color: #343a40; color: white;">
-            <h3 class="panel-title"><strong><i class="fa fa-table"></i> Changes Requested</strong></h3>
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong><i class="fa fa-table"></i> Change Requests</strong></h3>
           </div>
- 
- 
           <!-- This main panel will hold each of the resulting articles -->
           <div class="panel-body" id="well-section">
             <div class="row header-row">
-              <div class="col-xs-1 employee-header">Search a requester</div>
-              <div class="col-xs-1 employee-header">Change Requested</div>
-              <div class="col-xs-1 employee-header">Change Type</div>
-              <div class="col-xs-1 employee-header">Status</div>
-              <div class="col-xs-1 employee-header">Priority</div>
-              <div class="col-xs-1 employee-header">Impact</div>
-              <div class="col-xs-1 employee-header">Risk</div>
-              <div class="col-xs-1 employee-header">Group</div>
-              <div class="col-xs-1 employee-header">Agent</div>
-              <div class="col-xs-1 employee-header">Description</div>
-              <div class="col-xs-1 employee-header">Start Date</div>
-              <div class="col-xs-1 employee-header">End Date</div>
- 
+              <div class="col-xs-2 employee-header">Employee Name</div>
+              <div class="col-xs-2 employee-header">Change Requested</div>
+              <div class="col-xs-2 employee-header">Start Date</div>
+              <div class="col-xs-2 employee-header">End Date</div>
+              <div class="col-xs-2 employee-header">Monthly Rate ($)</div>
+              <div class="col-xs-2 employee-header">Total Billed ($)</div>
             </div>
           </div>
- 
+          
           <div class="panel-body" id="employee-container">
- 
+            
           </div>
         </div>
       </div>
@@ -141,47 +70,87 @@
     <!-- Adding new employees -->
     <div class="row">
       <div class="col-sm-12">
-      <br>
-     
+        <br>
+        <!-- Employee Entry Form -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i> Add Change</strong></h3>
+          </div>
+          <div class="panel-body">
+ 
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+ 
+              <!-- Here we create the text box for capturing the search term-->
+              <div class="form-group">
+                <label for="inputname">Employee Name</label>
+                <select id="inputname" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Olinda Cadena</option>
+                  <option>John Sprehe</option>
+                  <option>Joe Rushing</option>
+                  <option>Jeremy Mortley</option>
+                  <option>Jeremy Fleming</option>
+                  <option>Robert Miles</option>
+                  <option>Dave Daniels</option>
+                  <option>Greg Harlow</option>
+                  <option>Matt Varney</option>
+              </select>
+            </div>
+ 
+              <div class="form-group">
+                <label for="change-requested">Change Requested</label>
+                <input type="text" class="form-control" id="change-requested">
+              </div>
+ 
+              <div class="form-group">
+                <label for="employee-startdate">Start Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="date" class="form-control" id="employee-startdate">
+              </div>
+              <div class="form-group">
+                <label for="employee-enddate">End Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="date" class="form-control" id="employee-enddate">
+              </div>
+              <div class="form-group">
+                <label for="employee-description">Description</label>
+                <input type="text" class="form-control" id="employee-monthlyrate">
+              </div>
+ 
+ 
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-primary" id="submit-employee">Submit</button>
+ 
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
  
  
-  <!-- Footer Region -->
-  <div class="row">
-    <div class="col-sm-12">
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
  
-      <!-- Line Break followed by closing -->
-      <hr>
-      <h5 class="text-center"><small>Made by Olinda with lots and lots of <i class="fa fa-heart"></i></small></h5>
+        <!-- Line Break followed by closing -->
+        <hr>
+        <h5 class="text-center"><small>Made by Reginald with lots and lots of <i class="fa fa-heart"></i></small></h5>
  
+      </div>
     </div>
-  </div>
  
   </div>
-  <!-- Optional JavaScript -->
+ 
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script src="moment.js"></script>
+ 
   <!-- Code to the JavaScript File -->
-<script src="app.js"></script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
- 
- 
+  <script src="app.js"></script>
  
 </body>
  
 </html>
+ 
  
 
