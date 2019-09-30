@@ -55,7 +55,7 @@ console.log(today)
 	  enddateCol = $('<div class="col-xs-2">'+snapVal.enddate+'</div>');
     
     convertedDate = moment(snapVal.startdate, "MM/DD/YYYY");
-	
+	convertedendDate = moment(snapVal.enddate, "MM/DD/YYYY");
     monthsDuration = moment(convertedDate).diff(moment(), "months");
 
     monthsDuration *= -1
