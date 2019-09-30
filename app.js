@@ -30,7 +30,7 @@ $(document).ready(function(){
 
       startdate = $('#employee-startdate').val().trim();
       enddate = $('#employee-enddate').val().trim();  
-        // monthlyrate = $('#employee-monthlyrate').val().trim();
+        monthlyrate = $('#employee-monthlyrate').val().trim();
   
         database.ref().push({
             name : name,
@@ -44,7 +44,7 @@ $(document).ready(function(){
             description: description,
 			startdate : startdate,
          	enddate : enddate,
-            // monthlyrate : monthlyrate,
+            monthlyrate : monthlyrate,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
   
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
       $('#employee-startdate').val('');
       $('#employee-enddate').val('');
-        // $('#employee-monthlyrate').val('');
+        $('#employee-monthlyrate').val('');
   
     });
   
